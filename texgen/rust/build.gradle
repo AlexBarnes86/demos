@@ -8,3 +8,7 @@ repositories {
 dependencies {
 	compile "org.processing:core:3.0.1"
 }
+
+task wrapper(type: Wrapper) {
+	gradleVersion = 2.4;
+}
