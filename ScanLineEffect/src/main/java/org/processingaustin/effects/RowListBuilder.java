@@ -13,7 +13,7 @@ public class RowListBuilder {
 		List<Row> rows = new ArrayList<Row>();
 		
 		for(int i = 0; i < rowCount; i++){
-			int rowStart = rectangle.getWidth()*i;
+			int rowStart = rectangle.getWidth()*i*rowHeight;
 			int rowSize = rectangle.getWidth()*rowHeight;
 			int rowEnd = rowStart+rowSize-1;			
 			Row nextRow = new Row(i,rowStart,rowEnd,rowHeight);

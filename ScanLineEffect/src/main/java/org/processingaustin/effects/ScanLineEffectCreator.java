@@ -12,7 +12,7 @@ public class ScanLineEffectCreator {
 		this.pApplet = pApplet;
 		RowListBuilder rowListBuilder = new RowListBuilder();
 		//TODO parameterize row height variable
-		int rowHeight = 1;
+		int rowHeight = 2;
 		this.rows = rowListBuilder.getRows(areaOfEffect, rowHeight);		
 	}
 	
