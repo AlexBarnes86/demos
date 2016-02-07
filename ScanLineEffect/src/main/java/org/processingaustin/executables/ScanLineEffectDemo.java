@@ -11,12 +11,15 @@ public class ScanLineEffectDemo extends PApplet{
 	private static ScanLineEffectCreator scanLineCreator;
 	
 	public static void main(String[] args) {
-		String sketchPath = "executables.ScanLineEffectDemo";
+		String sketchPath = "org.processingaustin.executables.ScanLineEffectDemo";
 		PApplet.main(new String[] { "--present", sketchPath});	
-	}	
+	}
+
+	public void settings() {
+		size(APP_WIDTH,APP_HEIGHT);
+	}
 	
 	public void setup(){
-		size(APP_WIDTH,APP_HEIGHT);
 		colorMode(HSB,255,255,255,255);		
 		setScanLineCreator();
 		loadBackgroundImage();		

@@ -12,5 +12,6 @@ application.macosx
 .classpath
 .project
 .settings/
+bin/
 
 .gradle/
