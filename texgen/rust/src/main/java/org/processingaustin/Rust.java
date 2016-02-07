@@ -4,6 +4,10 @@ import processing.core.*;
 import java.util.Random;
 
 public class Rust extends PApplet {
+	//TODO: Import Rust Distribution Map
+	//TODO: Import Rust Probability Map
+	
+	private static final int END_FRAME = 100;
 	private int WIDTH = 200, HEIGHT = 200;
 	boolean [][] rustMap = new boolean[WIDTH][HEIGHT];
 	double [][] rustMapAge = new double[WIDTH][HEIGHT];
@@ -40,7 +44,9 @@ public class Rust extends PApplet {
 			}
 		}
 		updatePixels();
-		rusterizeStep();
+		if(frameCount <= END_FRAME) {
+			rusterizeStep();
+		}
 	}
 
 	private int countNeighbors(int row, int col) {
