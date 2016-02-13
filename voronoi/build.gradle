@@ -1,3 +1,7 @@
+apply plugin: "application"
+
+mainClassName = "org.processingaustin.VoronoiTest"
+
 dependencies {
 	compile "com.github.quickhull3d:quickhull3d:1.0.0"
 }
