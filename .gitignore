@@ -13,5 +13,6 @@ application.macosx
 .project
 .settings/
 bin/
+build/
 
 .gradle/
