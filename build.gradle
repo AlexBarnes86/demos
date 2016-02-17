@@ -1,6 +1,24 @@
+ext.processingVersion = "3.0.1"
+ext.gluegenVersion = "2.3.2"
+ext.joglVersion = "2.3.2"
+
 allprojects {
 	repositories {
 		mavenCentral()
+		
+		
+//		Unfortunately both gluegen and jogl require the native JNI jars to
+//		be in the same directory as gluegen-rt and jogl-all respectively.
+//		
+//		By default Gradle keeps dependencies in independent folders based
+//		on maven coordinates. We can work around this issue by checking
+//		them into the repo and using flatDir. Not ideal, but it works.
+//		
+//		Be sure to keep the versions of Gluegen and JOGL in lockstep with
+//		the versions found in an installed copy of the processing lib
+//		directory.
+
+		flatDir { dirs "${rootDir}/lib" }
 	}
 }
 
@@ -12,7 +30,33 @@ subprojects {
 	targetCompatibility = 1.8
 
 	dependencies {
-		compile "org.processing:core:3.0.1"
+		compile "org.processing:core:${processingVersion}"
+
+		compile ":gluegen-rt:${gluegenVersion}"
+		runtime ":gluegen-rt:${gluegenVersion}:natives-android-aarch64"
+		runtime ":gluegen-rt:${gluegenVersion}:natives-android-armv6"
+		runtime ":gluegen-rt:${gluegenVersion}:natives-linux-amd64"
+		runtime ":gluegen-rt:${gluegenVersion}:natives-linux-armv6"
+		runtime ":gluegen-rt:${gluegenVersion}:natives-linux-armv6hf"
+		runtime ":gluegen-rt:${gluegenVersion}:natives-linux-i586"
+		runtime ":gluegen-rt:${gluegenVersion}:natives-macosx-universal"
+		runtime ":gluegen-rt:${gluegenVersion}:natives-solaris-amd64"
+		runtime ":gluegen-rt:${gluegenVersion}:natives-solaris-i586"
+		runtime ":gluegen-rt:${gluegenVersion}:natives-windows-amd64"
+		runtime ":gluegen-rt:${gluegenVersion}:natives-windows-i586"
+
+		compile ":jogl-all:${joglVersion}"
+		runtime ":jogl-all:${joglVersion}:natives-android-aarch64"
+		runtime ":jogl-all:${joglVersion}:natives-android-armv6"
+		runtime ":jogl-all:${joglVersion}:natives-linux-amd64"
+		runtime ":jogl-all:${joglVersion}:natives-linux-armv6"
+		runtime ":jogl-all:${joglVersion}:natives-linux-armv6hf"
+		runtime ":jogl-all:${joglVersion}:atives-linux-i586"
+		runtime ":jogl-all:${joglVersion}:natives-macosx-universal"
+		runtime ":jogl-all:${joglVersion}:natives-solaris-amd64"
+		runtime ":jogl-all:${joglVersion}:natives-solaris-i586"
+		runtime ":jogl-all:${joglVersion}:natives-windows-amd64"
+		runtime ":jogl-all:${joglVersion}:natives-windows-i586"
 	}
 }
 

@@ -1,2 +1,6 @@
 apply plugin: "application"
 mainClassName = "org.processingaustin.Rust"
+
+dependencies {
+	compile project(":utils")
+}
