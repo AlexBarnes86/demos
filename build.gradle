@@ -51,7 +51,7 @@ subprojects {
 		runtime ":jogl-all:${joglVersion}:natives-linux-amd64"
 		runtime ":jogl-all:${joglVersion}:natives-linux-armv6"
 		runtime ":jogl-all:${joglVersion}:natives-linux-armv6hf"
-		runtime ":jogl-all:${joglVersion}:atives-linux-i586"
+		runtime ":jogl-all:${joglVersion}:natives-linux-i586"
 		runtime ":jogl-all:${joglVersion}:natives-macosx-universal"
 		runtime ":jogl-all:${joglVersion}:natives-solaris-amd64"
 		runtime ":jogl-all:${joglVersion}:natives-solaris-i586"
