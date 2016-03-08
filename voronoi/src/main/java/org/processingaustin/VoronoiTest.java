@@ -29,7 +29,7 @@ public class VoronoiTest extends PApplet {
 	}
 
 	public void settings() {
-		size(WIDTH, HEIGHT);
+		size(WIDTH, HEIGHT, P3D);
 	}
 
 	public void setup() {
